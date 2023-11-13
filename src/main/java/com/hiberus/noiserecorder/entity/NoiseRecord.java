@@ -1,6 +1,5 @@
 package com.hiberus.noiserecorder.entity;
 
-import com.hiberus.noiserecorder.utility.Office;
 import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -28,10 +27,7 @@ public class NoiseRecord {
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date date;
     @Column(name ="office")
-    @Enumerated(EnumType.STRING)
-    private Office office;
-    @Column(name ="boardid")
-    private Long boardId;
+    private String office;
 
     public NoiseRecord () {}
 }
