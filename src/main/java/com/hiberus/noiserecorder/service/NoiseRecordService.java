@@ -25,7 +25,6 @@ public class NoiseRecordService {
                     .avergageDb(dto.getAverageDb())
                     .date(formatDate(dto.getDate()))
                     .office(dto.getOffice())
-                    .boardId(dto.getBoardId())
                     .build());
             return true;
         } catch (Exception e) {
@@ -42,7 +41,6 @@ public class NoiseRecordService {
                 .averageDb(e.getAvergageDb())
                 .date(parseDate(e.getDate()))
                 .office(e.getOffice())
-                .boardId(e.getBoardId())
                 .build()).collect(Collectors.toList());
     }
 
