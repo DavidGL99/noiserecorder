@@ -12,6 +12,7 @@ import java.util.Date;
 @Builder
 @Data
 @AllArgsConstructor
+@Table(schema = "dbo")
 public class NoiseRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -22,7 +23,7 @@ public class NoiseRecord {
     private Double minDb;
     @Column(name ="avergagedb")
     private Double avergageDb;
-    @Column(name ="date")
+    @Column(name ="fecha")
     @Temporal(TemporalType.TIMESTAMP)
     @DateTimeFormat(pattern = "yyyy-MM-dd hh:mm:ss")
     private Date date;
