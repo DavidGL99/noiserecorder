@@ -12,11 +12,11 @@ import java.util.Date;
 @Builder
 @Data
 @AllArgsConstructor
-@Table(schema = "dbo")
+@Table(name = "noise_record")
 public class NoiseRecord {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long id;
+    private Integer id;
     @Column(name ="maxdb")
     private Double maxDb;
     @Column(name ="mindb")
