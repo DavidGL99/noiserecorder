@@ -7,8 +7,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.text.SimpleDateFormat;
+import java.util.Calendar;
 import java.util.Date;
 import java.util.List;
+import java.util.TimeZone;
 import java.util.stream.Collectors;
 
 @Service
@@ -58,7 +60,13 @@ public class NoiseRecordService {
     private Date formatDate(String date) {
         try {
             SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
-            return f.parse(date);
+            Date fdate = f.parse(date);
+            Calendar calendar = Calendar.getInstance();
+            calendar.setTime(fdate);
+            // Suma una hora para convertir a UTC+1
+            calendar.add(Calendar.HOUR_OF_DAY, 1);
+            // Obtiene la nueva fecha y hora
+            return calendar.getTime();
         } catch (Exception e) {
             e.printStackTrace();
             return null;
