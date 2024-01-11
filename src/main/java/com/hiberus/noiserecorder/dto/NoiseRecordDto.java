@@ -12,7 +12,7 @@ public class NoiseRecordDto {
     private Double maxDb;
     private Double minDb;
     private Double averageDb;
-    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Europe/Madrid")
+    @JsonFormat(pattern = "yyyy-MM-dd HH:mm:ss", timezone = "Europe/Paris")
     private String date;
     private String office;
 }
