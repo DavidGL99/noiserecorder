@@ -64,7 +64,7 @@ public class NoiseRecordService {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(fdate);
             // Suma una hora para convertir a UTC+1
-            calendar.add(Calendar.HOUR_OF_DAY, -1);
+            calendar.add(Calendar.HOUR_OF_DAY, -2);
             // Obtiene la nueva fecha y hora
             return calendar.getTime();
         } catch (Exception e) {
