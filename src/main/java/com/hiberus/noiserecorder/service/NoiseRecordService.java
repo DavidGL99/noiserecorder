@@ -48,7 +48,7 @@ public class NoiseRecordService {
 
     private String parseDate(Date date) {
         try {
-            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             return f.format(date);
         } catch (Exception e) {
             e.printStackTrace();
@@ -59,7 +59,7 @@ public class NoiseRecordService {
 
     private Date formatDate(String date) {
         try {
-            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd hh:mm:ss");
+            SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
             Date fdate = f.parse(date);
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(fdate);
