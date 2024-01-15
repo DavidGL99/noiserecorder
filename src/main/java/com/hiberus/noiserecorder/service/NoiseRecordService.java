@@ -49,6 +49,7 @@ public class NoiseRecordService {
     private String parseDate(Date date) {
         try {
             SimpleDateFormat f = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+            f.setTimeZone(TimeZone.getTimeZone("GMT+1"));
             return f.format(date);
         } catch (Exception e) {
             e.printStackTrace();
@@ -64,7 +65,7 @@ public class NoiseRecordService {
             Calendar calendar = Calendar.getInstance();
             calendar.setTime(fdate);
             // Suma una hora para convertir a UTC+1
-            calendar.add(Calendar.HOUR_OF_DAY, -2);
+            calendar.add(Calendar.HOUR_OF_DAY, -1);
             // Obtiene la nueva fecha y hora
             return calendar.getTime();
         } catch (Exception e) {
